@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /site.yml
-    destination: /var/www/yml/
+  - source: sample.war
+    destination: /home/ec2-user/
 hooks:
   BeforeInstall:
     - location: deployment.yml
