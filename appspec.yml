@@ -5,13 +5,10 @@ files:
     destination: /var/www/yml/
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies
+    - location: deployment.yml
       timeout: 300
-      runas: root
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
+      runas: ec2-user
   ApplicationStop:
-    - location: scripts/stop_server
+    - location: restart.yml
       timeout: 300
-      runas: root
+      runas: ec2-user
