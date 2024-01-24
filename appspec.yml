@@ -5,6 +5,10 @@ files:
     destination: /home/ec2-user/
 hooks:
   BeforeInstall:
+    - location: install.yml
+      timeout: 300
+      runas: ec2-user
+  AfterInstall:
     - location: deployment.yml
       timeout: 300
       runas: ec2-user
