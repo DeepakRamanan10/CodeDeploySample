@@ -4,11 +4,11 @@ files:
   - source: /*
     destination: /home/ec2-user/Target
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: deploy.sh
       timeout: 300
       runas: ec2-user
-  AfterInstall:
+  ApplicationStart:
     - location: restart.sh
       timeout: 300
       runas: ec2-user
