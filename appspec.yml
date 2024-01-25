@@ -5,14 +5,10 @@ files:
     destination: /home/ec2-user/Target
 hooks:
   BeforeInstall:
-    - location: restart.yml
-      timeout: 300
-      runas: ec2-user
-  BeforeInstall:
     - location: deploy.sh
       timeout: 300
       runas: ec2-user
-  ApplicationStop:
-    - location: restart.yml
+  AfterInstall:
+    - location: restart.sh
       timeout: 300
       runas: ec2-user
