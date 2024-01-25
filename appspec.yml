@@ -1,11 +1,15 @@
 version: 0.0
 os: linux
 files:
-  - source: sample.war
-    destination: /home/ec2-user/
+  - source: /*
+    destination: /home/ec2-user/Target
 hooks:
   BeforeInstall:
-    - location: deployment.yml
+    - location: restart.yml
+      timeout: 300
+      runas: ec2-user
+  BeforeInstall:
+    - location: deploy.sh
       timeout: 300
       runas: ec2-user
   ApplicationStop:
