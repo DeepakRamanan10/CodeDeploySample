@@ -1,7 +1,7 @@
 ---
 - hosts: server
   tasks:
-    - name: Setting up the Security Group for new instance
+    - name: Setting up the Security Group for the new instance
       ec2_group:
           name: Ansible_Security_Group_AWS
           description: Allowing Traffic on port 22 and 80
