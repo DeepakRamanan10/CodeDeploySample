@@ -4,7 +4,7 @@ files:
   - source: /deploy
     destination: /home/ec2-user
 hooks:
-  AfterInstall:
+  BeforeInstall:
     - location: deploy/deploy.sh
       timeout: 300
       runas: ec2-user
