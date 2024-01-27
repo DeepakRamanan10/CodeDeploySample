@@ -1,14 +1,14 @@
 version: 0.0
 os: linux
 files:
-  - source: /sample.war
-    destination: /home/ec2-user/Target
+  - source: /deploy
+    destination: /home/ec2-user
 hooks:
-  AfterInstall:
-    - location: deploy.sh
+  BeforeInstall:
+    - location: deploy/deploy.sh
       timeout: 300
       runas: ec2-user
-  ApplicationStart:
-    - location: restart.sh
+  AfterInstall:
+    - location: deploy/restart.sh
       timeout: 300
       runas: ec2-user
