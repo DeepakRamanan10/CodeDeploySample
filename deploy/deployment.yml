@@ -5,5 +5,5 @@
   tasks:
   - name: Copy WAR Package to Remote Hosts
     copy:
-      src: /home/ec2-user/sample.war
-      dest: /opt/apache-tomcat-9.0.85/webapps/sample.war
+      src: /home/ec2-user/Lab6A.war
+      dest: /opt/apache-tomcat-9.0.85/webapps/Lab6A.war
