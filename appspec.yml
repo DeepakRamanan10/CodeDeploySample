@@ -1,10 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: /deploy
+  - source: /deploy/sample.war
     destination: /home/ec2-user
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: deploy/deploy.sh
       timeout: 300
       runas: ec2-user
